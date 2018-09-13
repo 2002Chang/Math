@@ -1,0 +1,15 @@
+cur_x  =  3
+rate = 0.01 
+precision = 0.000001
+previous_step_size = 1
+max_iters = 10000
+iters = 0
+
+while previous_step_size > precision and iters < max_iters:
+    prev_x = cur_x
+    cur_x = cur_x - rate * 2*(prev_x+5)
+    previous_step_size = abs(cur_x - prev_x)
+    iters = iters+1 #iteration count
+    print("I: ",iters,"\nX value is",cur_x)
+    
+print("The local minimum is", cur_x)
